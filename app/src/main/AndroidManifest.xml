@@ -24,10 +24,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.ImageCaughtFaceActivity"
+        <activity android:name=".ui.image.ImageCaughtFaceActivity"
             android:launchMode="singleTop">
         </activity>
+        <activity android:name=".ui.image.ImageRecognitionActivity"/>
 
+        <activity android:name=".ui.camera.CameraCaughtActivity"/>
+        <activity android:name=".ui.camera.CameraRecognitionActivity"/>
+
+        <activity android:name="org.opencv.samples.facedetect.FdActivity"/>
     </application>
 
 </manifest>

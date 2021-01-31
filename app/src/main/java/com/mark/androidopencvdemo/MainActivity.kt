@@ -1,15 +1,13 @@
 package com.mark.androidopencvdemo
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.mark.androidopencvdemo.ui.ImageCaughtFaceActivity
+import com.mark.androidopencvdemo.ui.image.ImageCaughtFaceActivity
 import org.opencv.objdetect.CascadeClassifier
-import java.io.File
-import java.io.FileOutputStream
+import org.opencv.samples.facedetect.FdActivity
 
 class MainActivity : AppCompatActivity() , View.OnClickListener{
 
@@ -45,8 +43,8 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
 
     companion object {
         init {
-            System.loadLibrary("native-lib")
             System.loadLibrary("opencv_java4")
+            System.loadLibrary("native-lib")
         }
     }
 
@@ -56,13 +54,11 @@ class MainActivity : AppCompatActivity() , View.OnClickListener{
                 startActivity(object : Intent(MainActivity@this, ImageCaughtFaceActivity::class.java){})
             }
             R.id.image_face_recognition->{
-
             }
-            R.id.image_face_detection->{
-
+            R.id.camera_face_detection->{
+                startActivity(object : Intent(MainActivity@this, FdActivity::class.java){})
             }
-            R.id.image_face_recognition->{
-
+            R.id.camera_face_recognition->{
             }
         }
     }
